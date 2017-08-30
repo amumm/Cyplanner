@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <!--css and js for this page-->
+
+    <script src="js/LoginConnector.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/Universal.css"/>
+</head>
+
+<body onload="checkUser()">
+  <div class="Login">
+  </div>
+  <div id = "navTest">
+  </div>
+
+  <div class="content">
+    <p class = "whiteStuff" >Cy-Planner <br/> Login</p>
+    <form class="" action="index.html" method="post">
+      <span class = "whiteStuff" >Username:</span> <input id = "userName" class = "input input1" type="text" name="" value=""/> <br/>
+      <span class = "whiteStuff" >Password:</span> <input id = "password" class = "input input2" type="password" name="" value=""/> <br/>
+    </form>
+    <p class="failure">
+
+    </p>
+    <button class = "button button1" type="button" name="button">Submit</button>
+    <button class = "button button2" type="button" name="button">Sign-Up</button>
+  </div>
+
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/navbar.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".Login").html(getLogin());
+      $("#navTest").html(getNav());
+      checkUser();
+    });
+
+  </script>
+
+    <style media="screen">
+        .content{
+          text-align: center;
+          border: solid;
+          margin: 150px 525px 0px 525px;
+          padding: 20px 10px 60px 10px;
+        }
+
+        .content{
+          background-color:  #F1BE48;
+          border: 2px solid #524727;
+          text-decoration-color: white;
+
+        }
+
+        /*.whiteStuff{
+          color: white;
+        }*/
+
+        .button{
+          margin: 30px;
+        }
+
+        .button1{
+          margin-right: 2.5px;
+          margin-left: 55px;
+        }
+        .button2{
+          margin-left: 2.5px;
+        }
+
+        .input{
+          margin-right: 35px;
+        }
+        .input1{
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+
+    </style>
+  </body>
+
+</html>

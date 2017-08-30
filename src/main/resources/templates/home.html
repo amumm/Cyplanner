@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HomePage</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="bootstrap/favicon.ico"/>
+
+    <!--css and js for this page-->
+    <!-- <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/Universal.css"/> -->
+
+    <!--For Spring-->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"  />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <!--css and js for this page-->
+    <script src="js/AutoConnector.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/Universal.css" />
+  </head>
+
+  <body onload="">
+    <div class="Login">
+    </div>
+    <div id = "navTest">
+    </div>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide carousel-custom" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner carousel-custom" role="listbox">
+        <div class="item active carousel-custom">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class = "slidetext" onclick = "sendToPage('manage')" >Build your schedule</h1>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="item carousel-custom">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class = "slidetext" onclick = "sendToPage('rate')">Rate courses</h1>
+            </div>
+          </div>
+        </div>
+        <div class="item carousel-custom">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1  class = "slidetext" onclick = "sendToPage('SignUp')" >Save everything for later </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control carousel-custom" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control carousel-custom" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <footer></footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/navbar.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".Login").html(getLogin());
+        $("#navTest").html(getNav());
+        checkUser();
+      });
+
+    </script>
+
+    <style media="screen">
+      .slidetext{
+        color: white;
+        cursor: pointer;
+        text-decoration-color: white;
+      }
+      .slidetext:hover{
+        text-decoration-color: white;
+        text-decoration: underline;
+      }
+
+    </style>
+
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" href="bootstrap/favicon.ico"/>
+
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <!-- css and js for navbar and this page -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/Universal.css"/>
+    <script src="js/connector_modular.js"></script>
+  </head>
+  <body >
+    <div class="Login">
+    </div>
+    <div id = "navTest">
+    </div>
+    <div id="update_buttons">
+      <h2>Each Button updates the database with the newest data from the ISU Catalog webpage</h2>
+      <h2>(This will take a few minutes)</h2>
+      <button class = " button" type="button" id="update_courses">Courses Table</button>
+      <button class = " button" type="button" id="update_prereq">Prerequisites Table</button>
+      <button class = " button" type="button" id="update_geneds">Gen Eds Tables</button>
+      <button class = " button" type="button" id="update_USdiv">US Diversity Table</button>
+      <button class = " button" type="button" id="update_InternationalPerspectives">International PerspectivesTable</button>
+
+    </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/navbar.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".Login").html(getLogin());
+        $("#navTest").html(getNav());
+        checkUser();
+        connect("/client/admin",function(data){
+          // console.log(data.body);
+        });
+
+        $("button").click(function(){
+          send("/app/admin",$(this).attr("id"));
+        });
+
+      });
+    </script>
+
+    <style media="screen">
+      #update_buttons{
+        padding-top: 10%;
+        padding-left: 8%;
+      }
+
+    </style>
+
+  </body>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>
+Ratings
+</title>
+	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+		<!--css and js for this page-->
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="css/Universal.css"/>
+    <script src="js/RatingConnector.js"></script>
+    <style>
+
+			div.form{
+				display: block;
+			  text-align: center;
+				margin-top: 10%;
+			}
+
+			form {
+				display: inline-block;
+		    margin-left: auto;
+		    margin-right: auto;
+		    text-align: left;
+			}
+
+			.name{
+				margin-left: 6.5%;
+			}
+
+			.diff{
+				margin-left: 1%;
+
+			}
+
+			.hours{
+				margin-left: 6.8%;
+
+			}
+
+		</style>
+</head>
+<body onload="checkUser()">
+	<div class="Login">
+	</div>
+	<div id = "navTest">
+	</div>
+	<div class="form">
+		<h1 align="center">Rate a Class</h1>
+		<form >
+			Name of Course:<input id="course" class = "name" name="course" placeholder="Ex. COMS309"/><br/>
+			<br/>
+			Difficulty Rating 1-5:<input id="rate" class = "diff" name="rate"/><br/>
+			<br/>
+			Hours per Week:<input id="hours" class = "hours" name="hours" /><br/>
+			<br/>
+			Comments:<br/><textarea id="message" rows="6" cols="47"></textarea><br/>
+			<br/>
+			<button id ="SubmitHours" type="button" name="button">Submit</button>
+			<br/>
+		</form>
+	</div>
+
+
+ <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/navbar.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".Login").html(getLogin());
+			$("#navTest").html(getNav());
+		});
+
+	</script>
+</body>
+</html>

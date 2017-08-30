@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Schedule</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!--For Spring-->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"  />
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <!--css and js for this page-->
+    <script src="js/AutoConnector.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/Universal.css" />
+
+    <!--neccessary for autocomplete-->
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" />
+
+</head>
+
+<body onload="checkUser()">
+  <div class="Login">
+  </div>
+  <div id = "navTest">
+  </div>
+  <div class="content">
+
+    <form class="" action="index.html" method="post">
+      <span class = "whiteStuff" >Search Majors: </span><input  id = "major" type="text" name="" value=""/>
+      <button class = "addMaj button" type="button" name="button">Add</button><br/>
+
+      <span class = "whiteStuff" >Search Minors: </span><input id = "minor" type="text" name="" value=""/>
+      <button class = "addMin button" type="button" name="button">Add</button>
+
+      <p class = "whiteStuff">Programs Added:</p>
+      <div class = "box" >
+        <p id = "Major" class = "major whiteStuff">Majors: </p>
+        <p id = "Minor" class = "minor whiteStuff">Minors: </p>
+
+      </div>
+      <button  class = "removeMajor button" type="button" name="button">Remove Last<br/>
+      <span class = "" >Major</span>  </button>
+      <button  class = "removeMinor button" type="button" name="button">Remove Last<br/>
+      <span class = "" > Minor</span> </button><br/>
+
+      <div>
+        <strong class = "error" ></strong>
+      </div> <br/>
+      <button  class = "button submit" type="button" name="button">Generate<br/>Schedule</button>
+    </form>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/navbar.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".Login").html(getLogin());
+        $("#navTest").html(getNav());
+      });
+
+      function generate(){
+
+      	if(document.URL == "http://localhost:8080/Auto"){
+      		window.location.href= "http://localhost:8080/manage";
+      	}
+      	else{
+      	    window.location.href = "http://proj-309-ss-1.cs.iastate.edu:8080/manage";
+      	}
+      }
+
+    </script>
+
+    <style media="screen">
+
+      .content{
+        padding-top: 10%;
+        padding-left: 35%;
+      }
+
+      .box{
+        border: solid;
+        margin-right: 64%;
+      }
+
+      .numberBox{
+        width: 30px;
+      }
+      .submit{
+        margin: 10px 0px 10px 0px;
+        /*padding: 10px 24px 10px 24px;*/
+        cursor: pointer;
+        box-shadow: 0 8px 8px 0 rgba(0,0,0,0.24), 0 8px 8px 0 rgba(0,0,0,0.19);
+        radius: 8px;
+      }
+
+      /*.error{
+        color: rgb(193, 39, 12);
+      }*/
+
+    </style>
+
+  </body>
+
+</html>

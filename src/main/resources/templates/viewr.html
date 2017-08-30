@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>
+View Ratings
+</title>
+<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <!--css and js for this page-->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/Universal.css"/>
+    <script src="js/ViewRatingsConnector.js"></script>
+   <style>
+
+    div.form{
+    	display: block;
+      text-align: center;
+      margin-top: 12%;
+      margin-bottom: 8%;
+    }
+
+    form {
+    	display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    table{
+      width:70%;
+      margin-left:250px;
+      margin-right:auto;
+      margin-top: 5%;
+
+    }
+    table, th, td {
+        text-align: left;
+    }
+
+    th, td
+    {
+    	padding: 15px;
+    }
+
+    .row-scroll {
+        position:absolute;
+        top:300px;
+        bottom:10px;
+        right:100px;
+        left:0;
+        overflow-y:scroll;
+        margin-top: 5%;
+    }
+
+    #SubmitCourse{
+      margin-top: 1%;
+      margin-bottom: 3%;
+    }
+
+  </style>
+</head>
+<body onload="checkUser()">
+  <div class="Login">
+  </div>
+  <div id = "navTest">
+  </div>
+
+
+  <div class="form">
+    <h1 align="center">View Ratings</h1>
+    <form class="Form" >
+          Name of Course: <input id="viewcourse" name="viewcourse" placeholder="Ex. COMS309"/>
+        <button id ="SubmitCourse" type="button" name="button">Submit</button>
+        <br/>
+    </form>
+  </div>
+  <br/>
+  <div class="row-scroll">
+   <div id="table">
+
+   </div>
+  </div>
+
+</body>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/navbar.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".Login").html(getLogin());
+    $("#navTest").html(getNav());
+  });
+
+</script>
+</html>
